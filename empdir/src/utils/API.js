@@ -5,13 +5,10 @@ import axios from "axios";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   getEmployees: function() {
-  return axios.get('https://randomuser.me/api/', {
-    params: {
-      dataType: 'json'
+    return axios.get('https://randomuser.me/api/?results=100', {
+      params: {
+        dataType: 'json'
     }
-  })
-  .then(function (response) {
-    console.log(response);
   })
   }
 }
