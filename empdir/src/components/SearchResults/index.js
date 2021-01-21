@@ -6,7 +6,10 @@ function SearchResults(props) {
     <table>
       <tr>
         <th>Photo</th>
-        <th>Name</th>
+        <th>
+          <span onClick={event => { event.preventDefault(); props.toggleSortFirstName()}}>First Name</span>
+        </th>
+        <th>Last Name</th>
         <th>Gender</th>
         <th>Email</th>
       </tr>
@@ -16,7 +19,10 @@ function SearchResults(props) {
           <span><img alt="Employee" src={result.picture.medium} className="img-fluid" /></span>
         </td>
         <td>
-          <span>{result.name.first} {result.name.last}</span>
+          <span>{result.name.first}</span>
+        </td>
+        <td>
+          <span>{result.name.last}</span>
         </td>
         <td>
           <span>{result.gender}</span>

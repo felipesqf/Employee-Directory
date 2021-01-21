@@ -8,14 +8,13 @@ function SearchForm(props) {
       <div className="form-group">
         <label htmlFor="employee">Employee Name:</label>
         <input
-          value={props.search}
           onChange={props.handleInputChange}
-          name="employee"
-          list="employee"
+          value={props.search}
+          name="search"
           type="text"
           className="form-control"
-          placeholder="Type in a employee name"
-          id="employee"
+          placeholder="Search for a Employee"
+          id="search"
         />
         <datalist id="employee">
           {props.employee.map(employee => (
