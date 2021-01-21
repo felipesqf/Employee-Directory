@@ -1,17 +1,16 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import API from "../utils/API";
 import Container from "../components/Container";
 import SearchResults from "../components/SearchResults";
 import SearchForm from "../components/SearchForm";
+// import "./style.css";
+
 
 class Search extends Component {
-
   state = {
     search: "",
     employee: [],
     results: [],
-    error: "",
-    employeeListChanges:[]
   };
 
   componentDidMount() {
@@ -28,50 +27,40 @@ class Search extends Component {
         .catch(err => console.log(err));}
   }
 
+  //filter employees
   handleInputChange = event => {
     const value = event.target.value;
     let storedEmployees = JSON.parse(localStorage.getItem("Employees"));
-    console.log(this.state.search)
     let filteredEmployees = storedEmployees.filter(letter => letter.name.first.includes(value))
     this.setState({ results: filteredEmployees });
   };
 
-   sortEmployees = (a, b) => {
-    // Use toUpperCase() to ignore character casing
-    const nameA = a.name.first.toUpperCase();
-    const nameB = b.name.first.toUpperCase();
-  
-    let comparison = 0;
-    if (nameA > nameB) {
-      comparison = 1;
-    } else if (nameA < nameB) {
-      comparison = -1; 
-    }
-    console.log(comparison)
-    return comparison;
-    
+  //Sort Employees
+  sortEmployees = () => {
+    let storedEmployees = JSON.parse(localStorage.getItem("Employees"));
+    const sorted = storedEmployees.sort(function(a, b) {
+        if(a.name.first.toLowerCase() < b.name.first.toLowerCase()) return -1;
+        if(a.name.first.toLowerCase() > b.name.first.toLowerCase()) return 1;
+        return 0;
+       })
+    this.setState({ results: sorted });
   }
 
-  toggleSortFirstName = () =>{
-      let newEmployeeList = JSON.parse(localStorage.getItem("Employees"));
-      console.log(newEmployeeList)
-      this.setState({
-        employeeListChanges: newEmployeeList.sort((a, b) => a.name.first > b.name.first)
-      })
-      localStorage.setItem("Employees", JSON.stringify(newEmployeeList))
-  }
-
+//Render on the screen
   render() {
     return (
       <div>
         <Container style={{ minHeight: "80%" }}>
           <h1 className="text-center">Employee Directory!</h1>
-          
           <SearchForm
             handleInputChange={this.handleInputChange}
             employee={this.state.employee}
           />
-          <SearchResults results={this.state.results} />
+          <button class="btn btn-primary" onClick={event => {event.preventDefault(); this.sortEmployees();}} type="submit">Order by first Name</button>
+
+          <table>
+            <SearchResults results={this.state.results} />
+            </table>
         </Container>
       </div>
     );

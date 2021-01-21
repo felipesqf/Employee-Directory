@@ -5,13 +5,13 @@ function SearchResults(props) {
   return (
     <table>
       <tr>
-        <th>Photo</th>
-        <th>
-          <span onClick={event => { event.preventDefault(); props.toggleSortFirstName()}}>First Name</span>
-        </th>
-        <th>Last Name</th>
-        <th>Gender</th>
-        <th>Email</th>
+          <th>Photo</th>
+          <th onClick={event => {event.preventDefault(); this.sortEmployees();}}>
+          First Name
+          </th>
+          <th>Last Name</th>
+          <th>Gender</th>
+          <th>Email</th>
       </tr>
       {props.results.map(result => (
       <tr>

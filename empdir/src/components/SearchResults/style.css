@@ -2,10 +2,11 @@
   margin: 0 auto;
 } */
 
-table {
+table, span{
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  margin-top: 15px;
 }
 
 td, th {
