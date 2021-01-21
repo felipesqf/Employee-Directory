@@ -3,8 +3,6 @@ import API from "../utils/API";
 import Container from "../components/Container";
 import SearchResults from "../components/SearchResults";
 import SearchForm from "../components/SearchForm";
-// import "./style.css";
-
 
 class Search extends Component {
   state = {
@@ -12,7 +10,7 @@ class Search extends Component {
     employee: [],
     results: [],
   };
-
+//checking if the employees was retrieved from the api, if not, call the api and store in local storage
   componentDidMount() {
     let storedEmployees = JSON.parse(localStorage.getItem("Employees"));
     if (storedEmployees != null) {
@@ -56,8 +54,6 @@ class Search extends Component {
             handleInputChange={this.handleInputChange}
             employee={this.state.employee}
           />
-          <button class="btn btn-primary" onClick={event => {event.preventDefault(); this.sortEmployees();}} type="submit">Order by first Name</button>
-
           <table>
             <SearchResults results={this.state.results} />
             </table>
