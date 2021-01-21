@@ -6,7 +6,7 @@ function SearchResults(props) {
     <table>
       <tr>
           <th>Photo</th>
-          <th onClick={event => {event.preventDefault(); this.sortEmployees();}}>
+          <th>
           First Name
           </th>
           <th>Last Name</th>

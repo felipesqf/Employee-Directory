@@ -1,6 +1,6 @@
 {
-  "homepage": "https://felipesqf.github.io/Employee-Directory/",
-  "name": "Employee-Directory",
+  "homepage": "https://felipesqf.github.io/",
+  "name": "empdir",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
