@@ -54,7 +54,7 @@ class Search extends Component {
             handleInputChange={this.handleInputChange}
             employee={this.state.employee}
           />
-          <button type="button" class="btn btn-dark" onClick={event => {event.preventDefault(); this.sortEmployees();}}>Filter by first name</button>
+          <button type="button" class="btn btn-dark" onClick={event => {event.preventDefault(); this.sortEmployees();}}>Order by first name</button>
           <table>
             <SearchResults results={this.state.results} />
             </table>
