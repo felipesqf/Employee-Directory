@@ -29,9 +29,9 @@ The user should be able to:
 
 #### Final Product
 
-![screenshot1](https://github.com/felipesqf/Employee-Directory/blob/main/empdir/public/assets/empdir1.png)
-![screenshot2](https://github.com/felipesqf/Employee-Directory/blob/main/empdir/public/assets/empdir2.png)
-![screenshot3](https://github.com/felipesqf/Employee-Directory/blob/main/empdir/public/assets/empdir3.png)
+![screenshot1](https://github.com/felipesqf/Employee-Directory/blob/main/public/assets/empdir1.png)
+![screenshot2](https://github.com/felipesqf/Employee-Directory/blob/main/public/assets/empdir2.png)
+![screenshot3](https://github.com/felipesqf/Employee-Directory/blob/main/public/assets/empdir3.png)
 
 
 ### Licence
@@ -41,7 +41,7 @@ License under the [MIT License](LICENSE)
 
 ### Link to the Website
 
-N/A
+[Employee Directory](https://felipesqf.github.io/Employee-Directory/)
 
 ## Authors
 
